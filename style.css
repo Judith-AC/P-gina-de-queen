@@ -1,0 +1,328 @@
+/**** ESTIL GENERAL ****/
+
+/* Evita que el padding i les vores alterin les dimensions dels elsments */
+*{
+  box-sizing: border-box;
+}
+
+/* Configuració general del cos de la pàgina */
+body{
+  font-family: Arial, Helvetica, sans-serif; /* Tipus de lletra */
+  background: linear-gradient(135deg, #171719 0%, #080808 55%, #260b0b 100%); /* Fons degradat negre an un toc vermell fosc */
+  color: #f2f2f2; /* Color del text*/
+  margin: 0; /* Eliminar els marges per defecte del navegador */
+  padding: 0 25px; /* Afegir espai als costats */
+  line-height: 1.6; /* Millora la separació entre línies*/
+}
+
+/**** CAPÇALERA DE LA WEB ****/
+
+/* Col·locar el logo i el títol un al costat de l'altre */
+header{
+  display: flex;
+  align-items: center; /* Alinea verticalment el logo i el títol */
+  justify-content: center; /* Centra els elements horitzontalment */
+  gap: 25px; /* Espai entre el logo i el títol */
+  padding: 25px 0; /* Espai interior de la capçalera */
+  margin-bottom: 35px; /* Separació amb el contingut inferior */
+  border-bottom: 2px solid #b99a52; /* Línia daurada a sota de la capçalera */
+}
+
+/* Mida del logo de QUEEN */
+.logo{
+  height: 100px;
+  width: auto;
+  object-fit: contain; /* Manté les proporcions de la imatge */
+}
+
+/* Estil del títol pricipal QUEEN */
+header h1{
+  font-size: 3rem;
+  letter-spacing: 8px; /* Separa les lletres per donar un estil elegant */
+  color: #d7b56d; /* Color daurat */
+  margin: 0; /* Eliminar el marge per defecte */
+  text-shadow: 0 0 18px rgba(215, 181, 109, 0.25); /* Afegir una ombra suau al text */
+}
+
+/**** SECCIONS PRINCIPALS ****/
+
+/* Espai entre les diferents seccions*/
+main{
+  max-width: 1200px; /* Limita l'amplada perquè el contingut no quedi excessivament estirat */
+  margin: 0 auto; /* Centra el contingut */
+}
+
+/* Separació entre informació, membres i àlbums */
+main section{
+  margin-bottom: 55px;
+}
+
+/* Títols de les seccions */
+main section h2{
+  color: #d7b56d;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+
+  /* Línia fina daurada sota cada títol */
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(215, 181, 109, 0.4);
+}
+
+/* Paràgrafs de les seccions */
+main section p{
+  line-height: 1.8; /* Aumenta la separació de línies */
+  color: #d6d6d6; /* Color del text una mica més suau que el blanc */
+}
+
+/**** TARGETES DELS MEMBRES DE QUEEN ****/
+
+/* Organitza les targetes dels 4 membres */
+.membres{
+  display: flex;
+  flex-wrap: wrap; /* Permet que les targetes baixin de línia quab no hi ha prou espai */
+  gap: 25px; /* Espai entre les targetes */
+  
+  /* Centra totes les targetes */
+  justify-content: center; 
+  margin-top: 25px;
+}
+
+/* Disseny individual de cada membre */
+.membre{
+  background: linear-gradient(145deg, #202022, #111112); /* Fons fosc amb un degredat subtil */
+  border: 1px solid rgba(215, 181, 109, 0.25);/* Vora daurda discreta */
+  border-radius: 14px; /* CAntonades arrodonides */
+  padding: 15px; /* Espai interior de la targeta */
+  text-align: center; /* Centra el text*/
+  width: 220px; /* Amplada de cada targeta */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Anima suament els canvis visuals */
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35); /* Ombra exterior */
+}
+
+/* Efecte quan passem el ratolí per sobre d'un membre */
+.membre:hover{
+  transform: translateY(-7px); /* Eleva una mica la targeta */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55); /* Intensifica l'ombra */
+  border-color: #b99a52; /* Resalta la vora en daurat */
+}
+
+/* Imatges dels membres */
+.membre img{
+  display: block;
+  width: 100%; /* L'imatge ocupa tota l'amplada disponible */
+  height: 230px; /* Alçada uniforme per a totes les fotografies */
+  object-fit: cover; /* Retalla la imatge sense deformar-la */
+  border-radius: 9px; /* Arrodoneix les cantonades de la fotografia */
+  object-position: center; /* Centra la zona visible de la imatge */
+}
+
+/* Nom de cada membre */
+.membre h3{
+  margin: 15px 0 8px;
+  font-size: 1.1rem;
+}
+
+/* Enllaços als noms dels membres */
+.membre h3 a{
+  color: #d7b56d;
+  text-decoration: none; /* Elimina el subratllat per defecte */
+  transition: color 0.3s ease; /* Transició de color suau */
+}
+
+/* Canvi de color quan passem el ratolí pel nom */ 
+.membre h3 a:hover{
+  color: #fff0bd;
+  text-decoration: underline;
+}
+
+/* Descripció de cada membre */
+.membre p{
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #c9c9c9;
+}
+
+/**** DISTRIBUCIÓ DELS ÀLBUMS ****/
+
+/* Col·locar les portades en una graella flexible */
+.albums{
+  display: flex;
+  flex-wrap: wrap; /* Permet crear diverses files d'àlbums */
+  gap: 28px; /* Espai entre les targetes */
+  justify-content: center; /* Centra els àlbums */
+  padding: 20px 0; /* Espai vertical al voltant de la graella */
+}
+
+/* Trageta exterior de cada àlbum */
+.album{
+  position: relative;
+  /* Mida de cada targeta */
+  width: 200px;
+  height: 285px;
+  flex: 0 0 200px; /* Manté una amplada fixa a la graella */
+  border-radius: 12px; /* Cantonades arrodonides */ 
+  cursor: pointer; /* El cursos indica que es pot clicar */
+  perspective: 1000px; /* Necessari per crear el gir 3D */
+  background: transparent; /* Fons transparent */
+  transition: box-shadow 0.3s ease; /* Transició de l'ombra */
+  -webkit-tap-highlight-color: transparent; /* Evita el ressaltat de toc d'alguns mòbils */
+}
+
+/* Efecte quan passem el ratolí per sobre d'un àlbum */
+.album:hover{
+  box-shadow: 0 0 25px rgba(215, 181, 109, 0.35); /* Brillantor daurada al voltant de la targeta */
+}
+
+/**** SISTEMA DE GIR 3D DELS ÀLBUMS ****/
+
+/* Contenidor interior que gira les dues cares */
+.album-inner{
+  position: relative;
+  
+  /* Ocupa tota la targeta */
+  width: 100%;
+  height: 100%;
+
+  /* Manté les dues cares en un espai 3D */
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  
+  transition: transform 0.75s ease; /* Fa que el gir sigui progressiu */
+  border-radius: 12px;
+}
+
+/* Gira l'àlbum quan JavaScript hi afegeix la classe "girada" */
+.album.girada .album-inner{
+  transform: rotateY(180deg);
+}
+
+/**** CARA DAVANTERA I CARA POSTERIOR ****/
+
+/* Regles compartides per les dues cares */
+.album-front,
+.album-back{
+  position: absolute;
+
+  /* Les dues cares ocupen la mateixa superfície */
+  inset: 0; /* inset => És una propietat abreujada per les propietats següents */
+  width: 100%;
+  height: 100%;
+
+  border-radius: 12px; /* Cantonades arrodonides */
+  overflow: hidden; /* Evita que el contingut surti de la targeta */
+
+  /* Amaga la cara del derrere quan NO toca veure-la */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45); /* Ombra per donar profunditat */
+}
+
+/**** PORTADA CARA DAVANTERA ****/
+
+/* Fons i vora de la portada */
+.album-front{
+  background: #191919;
+  border: 1px solid rgba(215, 181, 109, 0.45);
+}
+
+/* Imatge de la portada */
+.album-front img{
+  display: block;
+
+  /* Omple tota la superfície de la targeta */
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover; /* Omple l'espai sense deformar la imatge */
+  border-radius: 0; /* La imatge NO necessita vores addisionals */
+  box-shadow: none; /* Elimina les ombre pròpies de la imatge */
+}
+
+/**** NOM DE L'ÀLBUM SOBRE LA PORTADA ****/
+
+/* Col·locar el nom a la part inferior de la portada */
+.album-name{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Ocupa tota l'amplada de la portada */
+  padding: 24px 9px 12px; /* Espai inferior del títol */
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.92)); /* Degredat per fer llegible el text sobre la imatge */
+
+  /* Color i format del text */
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+
+  text-shadow: 0 2px 5px #000; /* Ombra per millorar el contrast */
+}
+
+/**** CARA POSTERIOR : LLISTA DE CANÇONS ****/
+
+/* Aspecte de la contraportada */
+.album-back{
+  transform: rotateY(180deg); /* La cara posterior comença girada a 180 graus */
+  background: linear-gradient(145deg, #292321, #101010); /* Fons fosc amb degradat discret */
+  border: 1px solid #b99a52; /* Vora daurada */
+  padding: 15px 12px; /* Espai inferior */
+
+  /* Color i mida del text */
+  color: #f2f2f2;
+  font-size: 0.85rem;
+
+  overflow-y: auto; /* Permet desplaçar-se per llegir totes les canços */
+  overflow-x: hidden; /* Evita el desplaçament horitzontal */
+}
+
+/* Llista de cançons */
+.album-back ul{
+  margin: 0;
+  padding-left: 22px; /*  Espai per als marcadors de la llista */
+  max-width: none; /* Permet que la llista utilitzi tot l'espai vertical */
+}
+
+/* Cada cançó de la llista */
+.album-back ul li{
+  padding-left: 2px;
+  margin-bottom: 9px; /* Separa les cançons entre elles */
+  line-height: 1.4; /* Millora la llegibilitat */
+  overflow-wrap: anywhere; /* Evita que el títols llargs surtin de les targetes */
+}
+
+/* Color daurat del marcadors de la llista */
+.album-back ul li::marker{
+  color: #d7b56d;
+}
+
+/* Adaptació a mòbils */
+@media (max-width: 600px) {
+  body {
+    padding: 0 15px;
+  }
+
+  header {
+    gap: 15px;
+  }
+
+  .logo {
+    height: 75px;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 5px;
+  }
+
+  .album {
+    width: 180px;
+    height: 260px;
+    flex-basis: 180px;
+  }
+
+  .albums {
+    gap: 18px;
+  }
+}
